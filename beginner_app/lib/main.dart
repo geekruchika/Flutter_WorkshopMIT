@@ -6,64 +6,74 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        // home: MyHomePage(title: 'Flutter Demo Home Page'),
-        home: Scaffold(
-        
-          backgroundColor :Colors.blue,
-          body: Center(
-            child: Text("Hello World",style: TextStyle(fontSize: 24,color: Colors.brown),),
-          ),
-        ));
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: MyFirstPage(),
+    );
   }
 }
 
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key key, this.title}) : super(key: key);
+class MyFirstPage extends StatefulWidget {
+  @override
+  _MyFirstPageState createState() => _MyFirstPageState();
+}
 
-//   final String title;
+class _MyFirstPageState extends State<MyFirstPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Starting Flutter"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+                Text("Playing with Widgets",style: TextStyle(color: Colors.red,fontSize: 24),),
+            Text("Children 1"),
+            Text("Children 2"),
+            Text("Children 3"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text(
+                  'Children 1',
+                ),
+                Text("Children 2"),
+                Text("Children 3"),
+              ],
+            ),
+            Container(height: 50,width: 200,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.all(Radius.circular(30))
 
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
+            ),
+            child: Text("Container"),),
+            ListTile(
+              title: Text("Title"),
+              subtitle: Text("Subtitle"),
+              leading: Text("Lead"),
+              trailing: Text("Trail"),
+            ),
+            Card(child: ListTile(
+              title: Text("Title"),
+              subtitle: Text("Subtitle"),
+              leading: Text("Lead"),
+              trailing: Text("Trail"),
+            ),)
+          ],
+        ),
+      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: null, //_incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: Icon(Icons.add),
+      // ),
+    );
+  }
+}
 
-// class _MyHomePageState extends State<MyHomePage> {
-//   int _counter = 0;
-
-//   void _incrementCounter() {
-//     setState(() {
-//       _counter++;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             Text(
-//               'You have pushed the button this many times:',
-//             ),
-//             Text(
-//               '$_counter',
-//               style: Theme.of(context).textTheme.display1,
-//             ),
-//           ],
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _incrementCounter,
-//         tooltip: 'Increment',
-//         child: Icon(Icons.add),
-//       ),
-//     );
-//   }
-// }
