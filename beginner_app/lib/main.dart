@@ -12,10 +12,12 @@ class MyApp extends StatelessWidget {
         ),
         // home: MyHomePage(title: 'Flutter Demo Home Page'),
         home: Scaffold(
-        
-          backgroundColor :Colors.blue,
+          backgroundColor: Colors.blue,
           body: Center(
-            child: Text("Hello World",style: TextStyle(fontSize: 24,color: Colors.brown),),
+            child: Text(
+              "Hello World",
+              style: TextStyle(fontSize: 40, color: Colors.white),
+            ),
           ),
         ));
   }
