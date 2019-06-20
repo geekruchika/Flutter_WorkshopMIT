@@ -17,6 +17,8 @@ void main() {
     final titleFinder = find.text('T');
     final messageFinder = find.text('M');
     print(titleFinder);
+        print(messageFinder);
+
     expect(titleFinder, findsOneWidget);
     expect(messageFinder, findsOneWidget);
   });
